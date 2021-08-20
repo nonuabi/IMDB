@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
     <title>IMDB</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
@@ -12,18 +12,11 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">IMDB/HOME</a>
+        <a class="navbar-brand" href="/">IMDB/HOME</a>
         <form class="d-flex">
           <input
             id="searchBar"
@@ -33,20 +26,18 @@
             aria-label="Enter Movie Title here.."
             aria-describedby="basic-addon1"
             name="searchInputTitle"
+            disabled
           />
         </form>
-        <a class="btn btn-outline-dark" href=".//html/Movies.html"
+        <a class="btn btn-outline-dark" href="./Movies.html"
           >Favourite Movies</a
         >
       </div>
     </nav>
+    <main>
+      <div id="movie_info_container"></div>
+    </main>
 
-    <div
-      class="card text-dark bg-light mb-3"
-      style="max-width: 42.6rem; margin-left: 20.7rem; flex-direction: row"
-      id="searchRes"
-    ></div>
-    <script src="./js/script.js" type="text/javaScript"></script>
+    <script src="../js/infoScript.js" type="text/javaScript"></script>
   </body>
 </html>
-<!-- onclick="openPage('./MovieInformation/info.html')"  -->

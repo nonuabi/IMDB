@@ -1,69 +1,69 @@
 const api_url = "https://www.omdbapi.com/?apikey=210b0060";
-var dataObjects = [];
-var favMoviesID = [];
-var favMoviesInfo = [];
 
+//create objects
 const searchBar = document.getElementById("searchBar");
-searchDownbar = document.getElementById("searchRes");
+const searchDownbar = document.getElementById("searchRes");
+
+//handling searchbar input
 function inputHandle(e) {
   let result = e.target.value;
-  console.log("search result : ", result);
   handleMoiveTitle(result);
 }
-searchBar.addEventListener("input", inputHandle);
 
+//add favourite movies in local storage
+function handleFavBtn(e, data) {
+  e.preventDefault();
+  searchDownbar.innerHTML = "";
+  let favMoviesInfo = JSON.parse(localStorage.getItem("favourite movies"));
+  favMoviesInfo.push(data);
+  localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
+}
+
+//fetch data from the api
 async function handleMoiveTitle(result) {
   searchDownbar.innerHTML = "";
   if (result.length > 2) {
     const res = await fetch(api_url + `&t=${result}`);
     let data = await res.json();
-    console.log(data);
     if (data.Response === "False") {
       console.log("not found");
       return;
     } else {
+      //change inside html
       searchDownbar.innerHTML = `
       <div class="poster_container container">
-        <img src=${data.Poster} alt="movie_poster"></img>
+      <img src=${data.Poster} alt="movie_poster"></img>
       </div>
-        <div class="card-body">
-          <h2 class="card-title" >${data.Title}</h2>
+      <div class="card-body">
+          <div id="header_container">
+            <h2 class="card-title" >${data.Title}</h2>
+            <i id="info" class="fas fa-info-circle fa-2x"></i>
+          </div>
           <p class="card-text" ><b>Actors :</b> ${data.Actors}</p>
           <p class="card-text"><b>Year :</b> ${data.Year}</p>
           <p class="card-text"><b>IMDB Rating :</b> ${data.imdbRating}</p>
           <button id="fav_btn" class="btn btn-outline-danger" type="submit" >
-             My Favourite Movie
+          My Favourite Movie
           </button>
-        </div>
-      `;
+          </div>
+          `;
+
+      // add click event on favourite button
       document
         .getElementById("fav_btn")
         .addEventListener("click", (e) => handleFavBtn(e, data));
+
+      // call info.html page
+      function openPage() {
+        localStorage.setItem("Movies Information", JSON.stringify(data));
+        parent.location = "./html/info.html";
+      }
+
+      // add click event on info icon
+      document.getElementById("info").addEventListener("click", openPage);
     }
   }
 }
 
-function handleFavBtn(e, data) {
-  e.preventDefault();
-  searchDownbar.innerHTML = "";
-  console.log("before :: ", favMoviesInfo);
-  favMoviesInfo = JSON.parse(localStorage.getItem("favourite movies"));
-  favMoviesInfo.push(data);
-  console.log("after :: ", favMoviesInfo);
-  localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
-}
-
-// {
-//   Actors, Awards;
-//   Director, Genre, Language;
-//   Plot;
-//   Poster;
-//   Production;
-//   Released;
-//   Title;
-//   Writer;
-//   Year;
-//   imdbRating;
-// }
-
-// handleData();
+//add input event on search bar
+searchBar.addEventListener("input", inputHandle);

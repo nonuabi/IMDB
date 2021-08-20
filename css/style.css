@@ -11,6 +11,20 @@ a.disabled {
 #poster_id {
   width: 17%;
 }
+#info {
+  cursor: pointer;
+}
+#header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#info_btn {
+  border: none;
+  padding: none;
+  background: none;
+  margin: 0;
+}
 .display_fav_container {
   display: flex;
   justify-content: center;
@@ -20,6 +34,12 @@ a.disabled {
 }
 #listFav {
   margin-top: 0.5rem;
+}
+#movie_info_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 /* #remove_btn {
   padding-top: 0;
