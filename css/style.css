@@ -1,30 +1,20 @@
-/* #searchRes {
-  display: flex;
-} */
+/* nav bar  */
 #searchBar {
   width: 50vw;
 }
+
 a.disabled {
   pointer-events: none;
   cursor: default;
 }
-#poster_id {
-  width: 17%;
-}
-#info {
-  cursor: pointer;
-}
+
+/* favourite movies container */
 #header_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#info_btn {
-  border: none;
-  padding: none;
-  background: none;
-  margin: 0;
-}
+
 .display_fav_container {
   display: flex;
   justify-content: center;
@@ -32,25 +22,25 @@ a.disabled {
   flex-direction: column;
   align-items: center;
 }
+
 #listFav {
   margin-top: 0.5rem;
 }
+
+#info_btn {
+  border: none;
+  padding: none;
+  background: none;
+  margin: 0;
+}
+
+#info {
+  cursor: pointer;
+}
+
 #movie_info_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-/* #remove_btn {
-  padding-top: 0;
-  padding-bottom: 0;
-} */
-/* #card_id {
-  display: flex;
-  flex-direction: row;
-}
-
-#movie_container {
-  list-style: none;
-  margin: 1rem 1.5rem;
-} */

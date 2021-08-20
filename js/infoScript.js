@@ -1,7 +1,11 @@
 const movieInfo = document.getElementById("movie_info_container");
+
+//get data from local storage and add data into html
 function handleInfo() {
+  //parsing movie information array
   let data = JSON.parse(localStorage.getItem("Movies Information"));
-  movieInfo.innerHTML = `<div class="card mb-3" style="width: 77rem;height: 37rem;display: flex;justify-content: center;align-items: center;" >
+  movieInfo.innerHTML = `<div class="card mb-3" 
+  style="width: 77rem;height: 37rem;display: flex;justify-content: center;align-items: center;border: none;" >
       <div   class="row g-0">
         <div class="col-md-4">
           <img src=${data.Poster}  class="img-fluid rounded-start" alt="movie_poster"></img>
@@ -24,4 +28,6 @@ function handleInfo() {
       </div>
     </div>`;
 }
+
+//call function to display movie information
 handleInfo();

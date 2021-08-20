@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <!-- title -->
     <title>Favourite Movies</title>
+    <!-- syle sheet link -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- bootstrap cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+    <!-- fontawesome cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -20,10 +24,13 @@
       referrerpolicy="no-referrer"
     />
   </head>
+  <!-- body -->
   <body>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
+        <!-- home page link -->
         <a class="navbar-brand" href="/">IMDB/HOME</a>
+        <!-- disable form input -->
         <form class="d-flex">
           <input
             id="searchBar"
@@ -36,6 +43,7 @@
             disabled
           />
         </form>
+        <!-- disable favourite movies page link -->
         <a
           class="btn btn-outline-dark disabled"
           href="./Movies.html"
@@ -44,10 +52,13 @@
         >
       </div>
     </nav>
+    <!-- main section -->
     <div class="display_fav_container">
       <h1 class="display-5">My Favourite Movies List</h1>
+      <!-- display favourite movies container -->
       <ul id="listFav"></ul>
     </div>
+    <!-- movies.html page script file -->
     <script src="../js/favScript.js"></script>
   </body>
 </html>

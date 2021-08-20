@@ -1,5 +1,6 @@
 const listFav = document.getElementById("listFav");
 
+// array to store favourite movies
 var favouiteMoviesList = [];
 
 // delete favouite movie from local storage
@@ -10,6 +11,7 @@ function handleRemoveMovie(index) {
   window.location.reload();
 }
 
+// open info.html page also set data to local storage
 function openPage(index) {
   let element = favouiteMoviesList[index];
   localStorage.setItem("Movies Information", JSON.stringify(element));
@@ -45,10 +47,6 @@ function handleFavMovies() {
       </div>
     </li>
     `;
-
-    // call info.html page
-
-    // add click event on info icon
   });
 }
 

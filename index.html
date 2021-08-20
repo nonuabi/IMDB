@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <title>IMDB</title>
+    <!-- bootstap cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+    <!-- fontawesome cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -20,10 +22,13 @@
       referrerpolicy="no-referrer"
     />
   </head>
+  <!-- body -->
   <body>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
+        <!-- link for the home page -->
         <a class="navbar-brand" href="index.html">IMDB/HOME</a>
+        <!-- form to get search input -->
         <form class="d-flex">
           <input
             id="searchBar"
@@ -35,18 +40,19 @@
             name="searchInputTitle"
           />
         </form>
+        <!-- link for favourite movies page -->
         <a class="btn btn-outline-dark" href=".//html/Movies.html"
           >Favourite Movies</a
         >
       </div>
     </nav>
-
+    <!-- display search drop down container -->
     <div
       class="card text-dark bg-light mb-3"
       style="max-width: 42.6rem; margin-left: 20.7rem; flex-direction: row"
       id="searchRes"
     ></div>
+    <!-- index.js script file -->
     <script src="./js/script.js" type="text/javaScript"></script>
   </body>
 </html>
-<!-- onclick="openPage('./MovieInformation/info.html')"  -->
