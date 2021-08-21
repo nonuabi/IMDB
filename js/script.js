@@ -16,9 +16,10 @@ function inputHandle(e) {
 function handleFavBtn(e, data) {
   e.preventDefault();
   searchDownbar.innerHTML = "";
-  favMoviesInfo = [];
-  favMoviesInfo.push(JSON.parse(localStorage.getItem("favourite movies")));
-  if (favMoviesInfo) {
+
+  let tempData = JSON.parse(localStorage.getItem("favourite movies"));
+  if (tempData) {
+    favMoviesInfo.push(tempData);
     favMoviesInfo.push(data);
     localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
   } else {
