@@ -1,5 +1,7 @@
 const api_url = "https://www.omdbapi.com/?apikey=210b0060";
 
+var favMoviesInfo = [];
+
 //create objects
 const searchBar = document.getElementById("searchBar");
 const searchDownbar = document.getElementById("searchRes");
@@ -14,9 +16,14 @@ function inputHandle(e) {
 function handleFavBtn(e, data) {
   e.preventDefault();
   searchDownbar.innerHTML = "";
-  let favMoviesInfo = JSON.parse(localStorage.getItem("favourite movies"));
-  favMoviesInfo.push(data);
-  localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
+  favMoviesInfo = [];
+  favMoviesInfo.push(JSON.parse(localStorage.getItem("favourite movies")));
+  if (favMoviesInfo) {
+    favMoviesInfo.push(data);
+    localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
+  } else {
+    localStorage.setItem("favourite movies", JSON.stringify(data));
+  }
 }
 
 //fetch data from the api
