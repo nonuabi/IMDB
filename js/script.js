@@ -1,7 +1,5 @@
 const api_url = "https://www.omdbapi.com/?apikey=210b0060";
 
-var favMoviesInfo = [];
-
 //create objects
 const searchBar = document.getElementById("searchBar");
 const searchDownbar = document.getElementById("searchRes");
@@ -16,7 +14,7 @@ function inputHandle(e) {
 function handleFavBtn(e, data) {
   e.preventDefault();
   searchDownbar.innerHTML = "";
-
+  let favMoviesInfo = [];
   let tempData = JSON.parse(localStorage.getItem("favourite movies"));
   if (tempData) {
     favMoviesInfo.push(tempData);
