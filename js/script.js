@@ -17,8 +17,8 @@ function handleFavBtn(e, data) {
   let favMoviesInfo = [];
   let tempData = JSON.parse(localStorage.getItem("favourite movies"));
   if (tempData) {
-    favMoviesInfo.push(tempData);
-    favMoviesInfo.push(data);
+    favMoviesInfo.unshift(tempData);
+    favMoviesInfo.unshift(data);
     localStorage.setItem("favourite movies", JSON.stringify(favMoviesInfo));
   } else {
     localStorage.setItem("favourite movies", JSON.stringify(data));
